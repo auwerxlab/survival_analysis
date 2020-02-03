@@ -82,8 +82,8 @@ opt <- list(
   parse_args
 
 # Test input arguments
-if (!file.exists(opt$input)) {
-  stop(paste("--input invalid value:", opt$input, "not found."))
+if (!file.exists(opt$input_fp)) {
+  stop(paste("--input_fp invalid value:", opt$input_fp, "not found."))
 }
 if (!is.null(opt$colors)) {
   opt$colors <- opt$colors %>%
@@ -93,7 +93,7 @@ if (!is.null(opt$colors)) {
 
 suppressMessages(
   readxl::read_xlsx(
-    path = opt$input,
+    path = opt$input_fp,
     sheet = "data_collection",
     skip = 1,
     col_names = TRUE
@@ -104,14 +104,14 @@ suppressMessages(
       . <- select(., -2)
     }
     if (sum(unlist(unique(.[2])) %in% c("Dead", "Censored", "Alive", "Total", NA)) != length(unlist(unique(.[2])))) {
-      stop(paste("Row label other than 'Dead', 'Censored', 'Alive' or 'Total' found. Check file format in", opt$input))
+      stop(paste("Row label other than 'Dead', 'Censored', 'Alive' or 'Total' found. Check file format in", opt$input_fp))
     }
   }
 
 # Convert raw data into a tidy table
 input.table <- suppressMessages(
   readxl::read_xlsx(
-    path = opt$input,
+    path = opt$input_fp,
     sheet = "data_collection",
     skip = 1,
     col_names = TRUE
@@ -188,7 +188,7 @@ survival.data <- input.table %>%
   mutate(ExperimentalGroup = as.character(ExperimentalGroup)) %>%
   full_join(
     readxl::read_xlsx(
-      path = opt$input,
+      path = opt$input_fp,
       sheet = "experimental_model",
       col_names = TRUE
     ),

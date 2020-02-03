@@ -35,6 +35,7 @@ $ git remote add upstream https://github.com/auwerxlab/survival_analysis.git
 ```
 
 ```sh
+$ git fetch upstream
 $ git rebase upstream/master
 ```
 
@@ -177,7 +178,7 @@ A hundred *C. elegans* belonging to two different strains (StrainA and StrainB) 
 To fit the Kaplan-Meier survival curves and a Cox proportional hazards model, run the `build_survival_curves.R` script. Using the `--model Strain+Treatment` option will specify an additive linear model using "Strain" and "Treatement" as covariates.
 
 ```sh
-$ bin/build_survival_curves.R --input data/tutorial_data.xlsx --model Strain+Treatment --txt data/tutorial_data.txt --fig figs/tutorial.pdf --coxph data/tutorial_coxph.txt --km data/tutorial_km.txt
+$ bin/build_survival_curves.R --input_fp data/tutorial_data.xlsx --model Strain+Treatment --txt data/tutorial_data.txt --fig figs/tutorial.pdf --coxph data/tutorial_coxph.txt --km data/tutorial_km.txt
 ```
 
 When using RENKU, prepend `renku run` to the command to track the inputs/outputs with the knowledge graph.
