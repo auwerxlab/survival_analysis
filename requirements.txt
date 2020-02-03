@@ -1,0 +1,2 @@
+renku-r-tools>=0.0.2
+slims-lisp==0.1.2
