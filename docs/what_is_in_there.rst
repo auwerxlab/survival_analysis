@@ -1,6 +1,12 @@
 What's in this project
 ----------------------
 
+This project comes with everything you need to get started with analyzing survival data with R:
+
+- Scripts and notebooks.
+- A simple directory structure to organize the code, data and result.
+- Templates and test datasets.
+
 The project's structure looks like:
 
 ::

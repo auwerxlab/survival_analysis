@@ -1,22 +1,67 @@
 Usage
------
+=====
 
-The analysis is based on executable scripts found in the ``bin/`` directory. R notebooks found in the ``notebooks/`` directory can also be used.
+The analysis is based on R scripts and R notebooks.
 
-An IPython notebook (``survival_analysis.ipynb``) is available in the main directory of the project.
+An IPython notebook that summarizes all the analysis steps is also available. It is the easiest way to get started.
 
-This notebook provides a template for the analysis and is the easiest way to get started.
-It also provides steps to work with the `SLIMS <https://www.genohm.com/>`_ laboratory information management system.
+R scripts
+---------
 
-The ``survival_analysis.ipynb`` notebook has the following structure:
- - Setting up the environment on RENKU
- - Importing data from SLIMS
- - Creating a RENKU dataset
- - Building survival curves using the ``bin/build_survival_curves.R`` R script
- - Creating a RENKU dataset with the results
- - Uploading the results into SLIMS
+- **Location:** ``bin/`` directory.
+- **When to use:**
 
-.. toctree::
-   :maxdepth: 3
+  - For analyses that will repeat many times.
 
-   build_survival_curves
+- **When not to use:**
+
+  - For custom analyses that will repeate only once.
+  - When the details of the analysis process have to be showcased.
+  - When testing new methods.
+
+- **Documentation:**
+
+  .. toctree::
+     :maxdepth: 3
+
+     build_survival_curves
+
+R notebooks
+-----------
+
+- **Location:** ``notebooks/`` directory.
+- **When to use:**
+
+  - For custom analyses that will repeate only once.
+  - When the details of the analysis process have to be showcased.
+  - When testing new methods.
+
+- **When not to use:**
+
+  - For analyses that will repeat many times.
+
+- **Documentation:**
+
+  - `notebooks/build_survival_curves.Rmd <https://github.com/auwerxlab/survival_analysis/blob/master/notebooks/build_survival_curves.Rmd>`_
+
+IPython notebooks
+-----------------
+
+- **Location:** Main directory of the project.
+- **When to use:**
+
+  - When keeping a trace of the global analysis process is needed.
+
+- **When not to use:**
+
+  - Well, there are no real reasons not to use it.
+
+- **Documentation:**
+
+  .. toctree::
+     :maxdepth: 3
+
+     survival_analysis_ipynb
+
+
+

@@ -1,6 +1,6 @@
-=================================
-A R project for survival analysis
-=================================
+=================
+Survival analysis
+=================
 
 .. image:: https://img.shields.io/badge/license-apache2-brightgreen.svg
    :target: https://github.com/auwerxlab/survival_analysis/blob/master/LICENSE
@@ -21,15 +21,26 @@ Features:
 
 The project is readily compatible with `RENKU <https://renkulab.io/>`_.
 
-Documentation
-=============
+Read the `documentation <https://readthedocs.org/projects/survival_analysis>`_ to get started.
 
-.. toctree::
-   :maxdepth: 3
+Resources
+=========
 
-   what_is_in_there
-   local
-   renku
-   data_collection
-   usage
-   tutorial
+- Git clone URL: https://github.com/auwerxlab/survival_analysis.git
+- Documentation: https://readthedocs.org/projects/survival_analysis
+- R package ``survival``: https://cran.r-project.org/web/packages/survival/index.html
+
+Authors
+=======
+
+Please update this section with your authors details upon cloning this project.
+
+Ex:
+
+- John Smith: john.smith@email.com
+
+Description
+===========
+
+Please update this section with a description of your analysis upon cloning this project.
+

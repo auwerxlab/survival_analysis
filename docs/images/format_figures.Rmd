@@ -1,0 +1,19 @@
+---
+title: "Format figures"
+output: html_notebook
+---
+
+```{r}
+library(ggplot2)
+library(ggpubr)
+library(dplyr)
+data <- readRDS("tutorial_results.rds")
+```
+```{r}
+lapply(names(data), function(x){
+  ggsave(paste0(x, ".png"), data[[x]], device = "png",
+         width = 20,
+         height = 10,
+         units = "cm")
+})
+```

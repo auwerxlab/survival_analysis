@@ -29,8 +29,9 @@ author = 'Laboratory of Integrative System Physiology (LISP) at EPFL'
 # ones.
 extensions = [
     'sphinx_rtd_theme',
+    'sphinxemoji.sphinxemoji',
     'sphinx.ext.viewcode',
-    'sphinx.ext.todo',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -55,6 +56,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+
+# The emojui code
+sphinxemoji_style = 'twemoji'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

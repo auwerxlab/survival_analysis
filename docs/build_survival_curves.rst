@@ -1,5 +1,5 @@
 bin/build_survival_curves.R
----------------------------
+===========================
 
 ::
 
@@ -39,3 +39,16 @@ bin/build_survival_curves.R
 
 	    -h, --help
 	    	Show this help message and exit
+
+If ``--figdata`` is ``TRUE``, a RDS file is generated along the PDF specified by ``--fig``.
+The RDS file contains a list with the following elements:
+
+- **km:** Kaplan-Meier survival curves
+- **km.straight:** Straight-line version of the Kaplan-Meier survival curves
+- **n.risk:** Number of individuals at risk over time
+- **perc.risk:** Number of individuals at risk over time as a percentage of initial number
+- **median:** Median survival time with 0.95 confidence interval
+- **mean:** Mean survival time with Standard Error
+- **mrad:** Maximum reported age at death
+- **quartiles:** Survival time quartiles and Maximum reported age at death
+- **coxph:** Cox proportional hazard ratio for each covariate
