@@ -68,7 +68,7 @@ And finally, push the committed changes to the remote git repository:
 
 ::
 
-    $ git push
+    $ git push origin master
 
 .. include:: upstream.rst
 
