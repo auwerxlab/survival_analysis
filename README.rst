@@ -21,13 +21,13 @@ Features:
 
 The project is readily compatible with `RENKU <https://renkulab.io/>`_.
 
-Read the `documentation <https://readthedocs.org/projects/survival_analysis>`_ to get started.
+Read the `documentation <https://survival-analysis.readthedocs.io/en/latest/>`_ to get started.
 
 Resources
 =========
 
 - Git clone URL: https://github.com/auwerxlab/survival_analysis.git
-- Documentation: https://readthedocs.org/projects/survival_analysis
+- Documentation: https://survival-analysis.readthedocs.io/en/latest/
 - R package ``survival``: https://cran.r-project.org/web/packages/survival/index.html
 
 Authors
