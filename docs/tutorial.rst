@@ -1,7 +1,7 @@
 Tutorial
 ========
 
-A hundred *Caenorhabditis elegans* worms belonging to two different strains (**StrainA** and **StrainB**) were submitted to two different treatments (**T1** and **T2**) along the course of 6 weeks.
+A hundred *Caenorhabditis elegans* worms belonging to two different strains (**StrainA** and **StrainB**) were submitted to two different treatments (**T1** and **T2**) along the course of six weeks.
 The experimental design is summarized in the table below:
 
 .. list-table::
@@ -28,11 +28,13 @@ This tutorial will use Kaplan-Meier survival curves and a Cox proportional hazar
 Dataset
 -------
 
-The ``template/survival_data_collection.xlsx`` spreadsheet was used to collect counts of Dead/Censored *C. elegans* along the course of the experiment.
+The :ref:`templates/survival_data_collection.xlsx` spreadsheet was used to collect counts of Dead/Censored *C. elegans* along the course of the experiment.
 
-The resulting dataset is found in the ``data/tutorial_data.xlsx`` file.
+The resulting dataset is found in the `data/tutorial_data.xlsx <https://github.com/auwerxlab/survival_analysis/raw/master/data/tutorial_data.xlsx>`_ file.
 
-If not done yet, open the ``data/tutorial_data.xlsx`` to check the format. There are two sheets - see :ref:`templates/survival_data_collection.xlsx` for details.
+If not done yet, open the `data/tutorial_data.xlsx <https://github.com/auwerxlab/survival_analysis/raw/master/data/tutorial_data.xlsx>`_ to check the format.
+
+**Note: There are two sheets - see** :ref:`templates/survival_data_collection.xlsx` **for details.**
 
 Analysis
 --------
@@ -40,7 +42,7 @@ Analysis
 To fit the Kaplan-Meier survival curves and a Cox proportional hazards model, run the :ref:`bin/build_survival_curves.R` script.
 
 Using the ``--model Strain+Treatment`` option will specify an additive linear model using "Strain" and "Treatement" as covariates.
-These covariates were specified in the ``experimental_model`` sheet of the ``data/tutorial_data.xlsx`` file.
+These covariates were specified in the ``experimental_model`` sheet of the `data/tutorial_data.xlsx <https://github.com/auwerxlab/survival_analysis/raw/master/data/tutorial_data.xlsx>`_ file.
 
 ::
 

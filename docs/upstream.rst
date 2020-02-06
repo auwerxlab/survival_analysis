@@ -11,7 +11,7 @@ Set the ``upstream`` remote repository:
     $ git remote add upstream https://github.com/auwerxlab/survival_analysis.git
 
 
-Get updates from the ``upstream`` repository:
+Whenever you need the latest updates from the ``upstream`` repository, run:
 
 ::
 

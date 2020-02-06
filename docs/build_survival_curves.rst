@@ -1,6 +1,8 @@
 bin/build_survival_curves.R
 ===========================
 
+:File: `build_survival_curves.R <https://github.com/auwerxlab/survival_analysis/blob/master/bin/build_survival_curves.R>`_
+
 ::
 
     Usage: bin/build_survival_curves.R [options]

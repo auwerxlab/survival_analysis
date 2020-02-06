@@ -29,7 +29,10 @@ Use git to clone this project where you need it.
 
     $ git clone https://github.com/auwerxlab/survival_analysis.git
 
-.. include:: update_readme.rst
+Update the README file
+----------------------
+
+Now that the project is ready to start, update its README.rst file with your author's information and a short description.
 
 Keep track of your work
 -----------------------
@@ -80,3 +83,5 @@ Run the following commands in the R console to enable packrat and install the re
 
     > packrat::on()
     > packrat::restore()
+
+|:thumbsup:| That is it!
