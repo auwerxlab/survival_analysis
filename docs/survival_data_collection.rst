@@ -20,7 +20,11 @@ The ``data_collection`` sheet
         :"Day" column: Data collection time points.
         :"Condition..." column(s): Use one column per condition.
 
-        |:boom:| **CAUTION** |:boom:| **: Make sure that the "Dead" or "Censored" labels, as well as the "Day" value are present at each collection date, otherwise data will be ignored!**
+        .. note::
+          - Warnings (!) are displayed if negative counts are found.
+          - Cells that need fixed values/format are protected to avoid issues.
+
+        .. Warning:: Make sure that the "Day" values are present at each collection date, otherwise data will be ignored!
 
 The ``experimental_model`` sheet
 --------------------------------

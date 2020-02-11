@@ -37,7 +37,7 @@ Now that the project is ready to start, update its README.rst file with your aut
 Keep track of your work
 -----------------------
 
-|:boom:| **CAUTION** |:boom:| **: Understand what you are doing. Hosting your project on the wrong repository can expose sensitive information and data!**
+.. warning:: Understand what you are doing. Hosting your project on the wrong repository can expose sensitive information and data! |:boom:|
 
 Use a version control system like `git <https://git-scm.com/>`_ to keep track of your work.
 

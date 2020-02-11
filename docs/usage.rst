@@ -9,7 +9,7 @@ Try to keep the code, data and result organized along the existing directory tre
 
 .. include:: directory_tree.rst
 
-The :ref:`tutorial` is a great way to start.
+.. seealso:: The :ref:`tutorial` is a great way to start!
 
 R scripts
 ---------

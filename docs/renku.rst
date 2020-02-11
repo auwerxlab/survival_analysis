@@ -29,7 +29,7 @@ Use *https://github.com/auwerxlab/survival_analysis.git* as the ``Git repository
 .. image:: images/gitlab_screenshot_01.png
    :width: 100 %
 
-|:warning:| **WARNING** |:warning:| **: You need a first commit to trigger the build of the project's docker image.**
+.. note:: You need a first commit to trigger the build of the project's docker image.
 
 A simple way to get a first commit is to update the README.rst with your author's information and a short description.
 You can do it directly in GitLab by selecting the README.rst file and using the |button04| button.
@@ -53,7 +53,7 @@ Launch a new Interactive Environment to start working on the project:
 Keep track of your work
 -----------------------
 
-|:boom:| **CAUTION** |:boom:| **: Understand what you are doing. Hosting your project on the wrong repository can expose sensitive information and data!**
+.. warning:: Understand what you are doing. Hosting your project on the wrong repository can expose sensitive information and data! |:boom:|
 
 Renku uses GitLab/git for version control.
 
