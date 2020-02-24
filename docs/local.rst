@@ -1,7 +1,7 @@
-Local setup
-===========
+Working locally
+===============
 
-General settings to use this project on most UNIX systems.
+This section describes the general settings to use this project on most UNIX systems.
 
 Requirements
 ------------

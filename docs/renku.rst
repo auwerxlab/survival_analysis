@@ -1,7 +1,7 @@
-RENKU setup
-===========
+Working on RENKU
+================
 
-General settings to use this project in `RENKU <https://renkulab.io/>`_.
+This section describes the general settings to use this project in `RENKU <https://renkulab.io/>`_.
 
 *Tested with RENKU release* `0.5.1 <https://github.com/SwissDataScienceCenter/renku/releases/tag/0.5.1>`_
 

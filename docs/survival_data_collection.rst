@@ -3,7 +3,7 @@ templates/survival_data_collection.xlsx
 
 :File: `templates/survival_data_collection.xlsx <https://github.com/auwerxlab/survival_analysis/raw/master/templates/survival_data_collection.xlsx>`_
 :Location: ``templates/`` directory
-:Spreadsheet structure: The spreadsheet must contain two sheets named ``data_collection`` and ``experimental_model``:
+:Spreadsheet structure: The spreadsheet must contain two sheets named ``data_collection`` and ``experimental_model``, which are details below:
 
     ::
 
@@ -11,8 +11,8 @@ templates/survival_data_collection.xlsx
         |── data_collection
         └── experimental_model
 
-The ``data_collection`` sheet
------------------------------
+*data_collection* sheet
+-----------------------
 
         Insert the counts of "Deads" and "Censored" at each time point.
 
@@ -26,8 +26,8 @@ The ``data_collection`` sheet
 
         .. Warning:: Make sure that the "Day" values are present at each collection date, otherwise data will be ignored!
 
-The ``experimental_model`` sheet
---------------------------------
+*experimental_model* sheet
+--------------------------
 
         Describe the experimental design.
 

@@ -29,22 +29,22 @@ opt <- list(
     help = "R formula for the survival::survfit() function"
   ),
   make_option(
-    c("-t", "--txt"),
+    c("-o", "--output"),
     type = "character",
-    default = here("data/survival_data.txt"),
-    help = "Path to the output TXT table. Default: data/survival_data.txt"
-  ),
-  make_option(
-    c("-p", "--prism"),
-    type = "logical",
-    default = TRUE,
-    help = "Also generate a Graphpad Prism-compatible TXT table? (TRUE or FALSE) Default: TRUE"
+    default = here("data"),
+    help = "Path to the output directory. Default: data"
   ),
   make_option(
     c("-f", "--fig"),
     type = "character",
-    default = here("figs/survival.pdf"),
-    help = "Path to the output figure. Default: figs/survival.pdf"
+    default = NA,
+    help = "Path to the output directory for figure. Default: same as --output"
+  ),
+  make_option(
+    "--prism",
+    type = "logical",
+    default = TRUE,
+    help = "Also generate a Graphpad Prism-compatible TXT table? (TRUE or FALSE) Default: TRUE"
   ),
   make_option(
     c("-c", "--colors"),
@@ -65,21 +65,43 @@ opt <- list(
     help = "Generate a RDS file for the figure? (TRUE or FALSE) Default: TRUE"
   ),
   make_option(
+    "--txt",
+    type = "character",
+    default = "survival_data.txt",
+    help = "Name of the output TXT table. Default: survival_data.txt"
+  ),
+  make_option(
+    "--pdf",
+    type = "character",
+    default = "survival_data.pdf",
+    help = "Name of the output PDF figure. Default: survival_data.pdf"
+  ),
+  make_option(
     "--coxph",
     type = "character",
-    default = here("data/coxph.txt"),
-    help = "Path to the output file for the Cox proportional hazards model. Default: data/coxph.txt"
+    default = "coxph.txt",
+    help = "Name of the output file for the Cox proportional hazards model. Default: coxph.txt"
   ),
   make_option(
     "--km",
     type = "character",
-    default = here("data/km.txt"),
-    help = "Path to the output file for the Kaplan-Meier survival model. Default: data/km.txt"
+    default = "km.txt",
+    help = "Name of the output file for the Kaplan-Meier survival model. Default: km.txt"
   )
 ) %>%
   OptionParser(option_list = .,
                description = "Fit the Kaplan-Meier survival curves and a Cox proportional hazards model using the R 'survival' package.") %>%
   parse_args
+
+if (is.null(opt$fig)) {
+  opt$fig <- opt$output
+}
+
+# Create output directories if not present yet
+dir.create(opt$output)
+if (opt$output != opt$fig) {
+  dir.create(opt$fig)
+}
 
 # Test input arguments
 if (!file.exists(opt$input_fp)) {
@@ -205,7 +227,7 @@ survival.data <- input.table %>%
                                       names))
 
 #Export the survival table
-fwrite(survival.data, opt$txt, sep = "\t")
+fwrite(survival.data, file.path(opt$output, opt$txt), sep = "\t")
 
 # Export the survival table for prism
 if (opt$prism == TRUE) {
@@ -216,7 +238,7 @@ if (opt$prism == TRUE) {
     select(one_of("time",
                   survival.data$ExperimentalGroup %>%
                     levels)) %>%
-    fwrite(paste0(opt$txt, "-PRISM.txt"), sep = "\t")
+    fwrite(file.path(opt$output, paste0(opt$txt, "-PRISM.txt")), sep = "\t")
 }
 
 # Fit the Kaplan-Meier survival curves
@@ -228,7 +250,7 @@ fit <-
 coxfit <-
   coxph(as.formula(paste("Surv(time, status) ~", opt$model)),
         data = survival.data)
-sink(opt$coxph)
+sink(file.path(opt$output, opt$coxph))
 summary(coxfit)
 sink()
 
@@ -270,7 +292,7 @@ survival.variables <- fit %>%
       survival:::quantile.survfit(.)
     )
   }
-fwrite(survival.variables, opt$km, sep = "\t")
+fwrite(survival.variables, file.path(opt$output, opt$km), sep = "\t")
 
 # Plot survival curves and associated statistics
 suvival.plot <- {
@@ -411,15 +433,15 @@ suvival.plot <- {
 
 # Store the survival curve object and pdf
 if (opt$figdata == TRUE) {
-  saveRDS(suvival.plot, file.path(dirname(opt$fig),
+  saveRDS(suvival.plot, file.path(opt$fig,
                                   paste0(sub(
                                     "\\.[^.]*$",
                                     "",
-                                    basename(opt$fig)
+                                    opt$pdf
                                   ),
                                   ".rds")))
 }
-pdf(opt$fig)
+pdf(file.path(opt$fig, opt$pdf))
 invisible(lapply(suvival.plot, print))
 invisible(dev.off())
 rm(list = ls())

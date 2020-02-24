@@ -31,5 +31,5 @@ Documentation
    local
    renku
    data_collection
-   usage
+   data_analysis
    tutorial

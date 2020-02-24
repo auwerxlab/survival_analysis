@@ -12,6 +12,11 @@ Survival analysis
    :target: https://survival_analysis.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
+This project reference and version:
+
+  - Git repository: <your_release_tag>
+  - Release: '<your_release_tag>
+
 A R project for survival analysis based on the R `survival package <https://cran.r-project.org/web/packages/survival/index.html>`_.
 
 Features:
