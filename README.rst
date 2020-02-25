@@ -18,11 +18,13 @@ This project comes as a "template" which is available at https://github.com/auwe
 It provides **code** for the analysis but **no data**.
 Read the `documentation <https://survival-analysis.readthedocs.io/en/latest/>`_ to get started.
 
-Features:
----------
+Features
+--------
 
 - Kaplan-Meier survival curves
 - Cox proportional hazards regression model
+- Compatibility with `RENKU <https://renkulab.io/>`_
+- Integration with `SLIMS <https://www.genohm.com/>`_
 
 Authors
 =======

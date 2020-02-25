@@ -14,15 +14,16 @@ A R project for survival analysis
 
 A R project for survival analysis based on the R `survival package <https://cran.r-project.org/web/packages/survival/index.html>`_.
 
-Features:
+This project comes as a "template" which is available at https://github.com/auwerxlab/survival_analysis.
+It provides **code** for the analysis but **no data**.
+
+Features
+--------
 
 - Kaplan-Meier survival curves
 - Cox proportional hazards regression model
-
-The project is readily compatible with `RENKU <https://renkulab.io/>`_.
-
-Documentation
-=============
+- Compatibility with `RENKU <https://renkulab.io/>`_
+- Integration with `SLIMS <https://www.genohm.com/>`_
 
 .. toctree::
     :caption: Intro
