@@ -1,10 +1,10 @@
 Working locally
 ===============
 
-This section describes the general settings to use this project on most UNIX systems.
+This section describes the general steps to setup this project on most UNIX systems.
 
-Requirements
-------------
+1. Requirements
+---------------
 
 - R scripts and R notebooks:
 
@@ -20,8 +20,8 @@ Requirements
        :literal:
 
 
-Getting this R project
-----------------------
+2. Get the R project "template"
+-------------------------------
 
 Use git to clone this project where you need it.
 
@@ -29,15 +29,32 @@ Use git to clone this project where you need it.
 
     $ git clone https://github.com/auwerxlab/survival_analysis.git
 
-Update the README file
-----------------------
+3. Update the README file
+-------------------------
 
 Now that the project is ready to start, update its README.rst file with your author's information and a short description.
 
-Keep track of your work
------------------------
+.. include:: install_r_pkg.rst
 
-.. warning:: Understand what you are doing. Hosting your project on the wrong repository can expose sensitive information and data! |:boom:|
+Run the following commands in the R console to enable packrat and install the required libraries:
+
+::
+
+    > packrat::on()
+    > packrat::restore()
+
+5. Keep track of your work
+--------------------------
+
+.. danger::
+
+    Understand what you are doing. Hosting your project on the wrong repository can **expose sensitive information and data**! |:boom:|
+
+    It usually boils down to the following points:
+
+    - Understand the project's privacy requirments.
+    - Know who has access to the git repository.
+    - If you whitness a breach, immediatly inform the responsible persons and fix the breach (make sure to also delete all sensitive information from previous versions and logs).
 
 Use a version control system like `git <https://git-scm.com/>`_ to keep track of your work.
 
@@ -49,7 +66,16 @@ Then, set its url in the project:
 
     $ git remote set-url origin https://<your_new_remote_url>.git
 
-Tracking data and figures may be disabled by default. So modify the ``.gitignore`` file accordingly:
+Tracking data and figures may be disabled by default, so first modify the ``.gitignore`` file accordingly.
+This can be done using UNIX cammands from a Terminal:
+
+::
+
+    $ sed -i "/data\/\*/d" .gitignore
+    $ sed -i "/figs\/\*/d" .gitignore
+    $ sed -i "/\*\.nb\.html/d" .gitignore
+
+OR
 
 ::
 
@@ -75,13 +101,5 @@ And finally, push the committed changes to the remote git repository:
 
 .. include:: upstream.rst
 
-.. include:: install_r_pkg.rst
-
-Run the following commands in the R console to enable packrat and install the required libraries:
-
-::
-
-    > packrat::on()
-    > packrat::restore()
 
 |:thumbsup:| That is it!

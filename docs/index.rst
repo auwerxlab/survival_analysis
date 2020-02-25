@@ -40,7 +40,7 @@ Features
 
 .. toctree::
     :caption: Usage
-    :maxdepth: 1
+    :maxdepth: 3
 
     data_collection
     data_analysis

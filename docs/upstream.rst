@@ -1,5 +1,5 @@
-Keeping up to date with the last version of the code
-----------------------------------------------------
+6. Keep up to date with the last version of the project "template"
+------------------------------------------------------------------
 
 To keep updated with the last version of the code, set an ``upstream`` remote repository and use the ``git rebase`` command.
 

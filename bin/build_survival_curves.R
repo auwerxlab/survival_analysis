@@ -93,7 +93,7 @@ opt <- list(
                description = "Fit the Kaplan-Meier survival curves and a Cox proportional hazards model using the R 'survival' package.") %>%
   parse_args
 
-if (is.null(opt$fig)) {
+if (is.na(opt$fig)) {
   opt$fig <- opt$output
 }
 

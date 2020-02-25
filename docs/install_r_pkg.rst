@@ -1,4 +1,4 @@
-Installing R packages
+4. Install R packages
 ---------------------
 
 This R project uses `packrat <https://rstudio.github.io/packrat>`_ to manage R packages.

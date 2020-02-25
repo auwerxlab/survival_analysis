@@ -3,14 +3,15 @@
 
 This R project provides :ref:`R scripts` and :ref:`R notebooks` to perform basic analyses on survival datasets.
 
-An :ref:`IPython notebook` that summarizes all the environment setup and data analysis steps is also available in the main directory. It is the easiest way to get started.
+An :ref:`IPython notebook` that summarizes all the environment setup and data analysis steps is also available in the main directory.
+**It is the easiest way to get started** |:smiley:|.
 
 
 .. note:: Try to keep the code, data and result organized along the existing directory tree:
 
     .. include:: directory_tree.rst
 
-.. seealso:: The :ref:`tutorial` is a great way to start!
+.. seealso:: The :ref:`*C. elegans* drug response` tutorial is a great way to start!
 
 .. include:: ../bin/README.rst
 
