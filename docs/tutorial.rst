@@ -1,5 +1,5 @@
-Tutorial
-========
+*C. elegans* drug response
+==========================
 
 A hundred *Caenorhabditis elegans* worms belonging to two different strains (**StrainA** and **StrainB**) were submitted to two different treatments (**T1** and **T2**) along the course of six weeks.
 The experimental design is summarized in the table below:

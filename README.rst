@@ -14,8 +14,8 @@ Survival analysis
 
 A R project for survival analysis based on the R `survival package <https://cran.r-project.org/web/packages/survival/index.html>`_.
 
-This project comes as a template which is available at https://github.com/auwerxlab/survival_analysis.
-It provides code for the analysis but no data.
+This project comes as a "template" which is available at https://github.com/auwerxlab/survival_analysis.
+It provides **code** for the analysis but **no data**.
 Read the `documentation <https://survival-analysis.readthedocs.io/en/latest/>`_ to get started.
 
 Features:
@@ -27,13 +27,13 @@ Features:
 Authors
 =======
 
-**Update this section with your authors details upon cloning this project.**
+*Update this section with your authors details upon cloning this project.*
 
-Ex:
+*Ex:*
 
-- John Smith: john.smith@email.com
+- *John Smith: john.smith@email.com*
 
 Description
 ===========
 
-**Update this section with a description of your analysis upon cloning this project.**
+*Update this section with a description of your analysis upon cloning this project.*

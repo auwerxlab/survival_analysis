@@ -25,11 +25,27 @@ Documentation
 =============
 
 .. toctree::
-   :maxdepth: 3
+    :caption: Intro
+    :maxdepth: 3
 
-   what_is_in_there
-   local
-   renku
-   data_collection
-   data_analysis
-   tutorial
+    what_is_in_there
+
+.. toctree::
+    :caption: Setup
+    :maxdepth: 3
+
+    local
+    renku
+
+.. toctree::
+    :caption: Usage
+    :maxdepth: 1
+
+    data_collection
+    data_analysis
+
+.. toctree::
+    :caption: Tutorial
+    :maxdepth: 3
+
+    tutorial

@@ -1,5 +1,5 @@
-Usage - Step 1: Data collection and data format
-===============================================
+1. Data collection and data format
+==================================
 
 This project provides standardized data collection templates to ensure immediate
 compatibility of the collected data with the downstream analysis steps.

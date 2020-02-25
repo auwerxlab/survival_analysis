@@ -1,5 +1,5 @@
-Usage - Step 2: Data analysis
-=============================
+2. Data analysis
+================
 
 This R project provides :ref:`R scripts` and :ref:`R notebooks` to perform basic analyses on survival datasets.
 
