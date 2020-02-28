@@ -15,3 +15,4 @@ class Command(object):
                          stderr = subprocess.PIPE)
         self.stdout = out.stdout
         self.stderr = out.stderr
+

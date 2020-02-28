@@ -386,4 +386,5 @@ data/*
 figs/*
 Rplots*
 !*/.gitkeep
+!/lib/
 .Rproj.user
