@@ -3,7 +3,7 @@ import re
 import os
 from command import Command
 
-class Lisp_workflow(object):
+class Workflow(object):
     """
     Wrappers for each step of the data analysis workflow
     """
