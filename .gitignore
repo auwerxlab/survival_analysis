@@ -382,6 +382,7 @@ packrat/lib*/
 packrat/bundles*/
 *.nb.html
 data/*
+!data/*/.gitkeep
 !data/tutorial_data.xlsx
 figs/*
 Rplots*
