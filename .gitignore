@@ -378,13 +378,17 @@ tags
 .renku/tmp
 .renku/cache
 
-packrat/lib*/
-packrat/bundles*/
+# R
+/packrat/lib*/
+/packrat/bundles*/
 *.nb.html
-/data/*
-!/data/tutorial_data.xlsx
-figs/*
 Rplots*
-!*/.gitkeep
-!/lib/
 .Rproj.user
+
+# project
+/data/*
+/figs/*
+!/data/tutorial_data.xlsx
+!/lib/
+!*/.gitkeep
+
