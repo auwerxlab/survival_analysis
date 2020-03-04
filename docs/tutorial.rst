@@ -39,14 +39,14 @@ If not done yet, open the `data/tutorial_data.xlsx <https://github.com/auwerxlab
 Analysis
 --------
 
-To fit the Kaplan-Meier survival curves and a Cox proportional hazards model, run the :ref:`bin/build_survival_curves.R` script.
+To fit the Kaplan-Meier survival curves and a Cox proportional hazards model, run the :ref:`bin/build_survival_curves.R` script in a terminal.
 
-Using the ``--model Strain+Treatment`` option will specify an additive linear model using "Strain" and "Treatement" as covariates.
+Using the ``--model "Strain+Treatment"`` option will specify an additive linear model using "Strain" and "Treatement" as covariates.
 These covariates were specified in the ``experimental_model`` sheet of the `data/tutorial_data.xlsx <https://github.com/auwerxlab/survival_analysis/raw/master/data/tutorial_data.xlsx>`_ file.
 
 ::
 
-    $ bin/build_survival_curves.R --input_fp data/tutorial_data.xlsx --model Strain+Treatment --txt data/tutorial_data.txt --fig figs/tutorial.pdf --coxph data/tutorial_coxph.txt --km data/tutorial_km.txt
+    $ bin/build_survival_curves.R --input_fp data/tutorial_data.xlsx --model "Strain+Treatment" --output_dir data/tutorial_results --fig_dir figs/tutorial_results
 
 Results
 -------
@@ -57,15 +57,17 @@ The results should look like:
 
     survival_analysis
     |── data
-    |   |── tutorial_data.txt            A tidy data table
-    |   |── tutorial_data.txt-PRISM.txt  PRISM.txt - A data table in a Graphpad Prism-compatible format
-    |   |── tutorial_coxph.txt           The results of the Cox regression analysis
-    |   └── tutorial_km.txt              A data table of variable for the Kaplan-Meier model
+    |   └── tutorial_results
+    |       |── survival_data.txt            A tidy data table
+    |       |── survival_data.txt-PRISM.txt  PRISM.txt - A data table in a Graphpad Prism-compatible format
+    |       |── coxph.txt                    The results of the Cox regression analysis
+    |       └── km.txt                       A data table of variable for the Kaplan-Meier model
     └── figs
-        |── tutorial.pdf                 The figures, including survival curves
-        └── tutorial.rds                 The figures data in RDS format
+        └── tutorial_results
+            |── survival_data.pdf            The figures, including survival curves
+            └── survival_data.rds            The figures data in RDS format
 
-The figures are found in the ``figs/tutorial.pdf`` file:
+The figures are found in the ``figs/tutorial_results/survival_data.pdf`` file:
 
 - Kaplan-Meier survival curves for each experimental group:
 
@@ -112,4 +114,4 @@ The figures are found in the ``figs/tutorial.pdf`` file:
 .. image:: images/coxph.png
    :width: 600
 
-The results show that the treatment has an effect on the worms survival in both strains, while there is no significant differences in survival between the two observed strains of *C. elegans*.
+Overall, the results show that the treatment has an effect on the worms survival in both strains, while there is no significant differences in survival between the two observed strains of *C. elegans*.

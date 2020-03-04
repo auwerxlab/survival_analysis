@@ -179,7 +179,7 @@ dataset in SLIMS.  [default: dataset_<ISO 8601 timestamp>]',
         opts = {
             "input_fp": "Path to the xlsx input file",
             "model": "Statistical model (ex: 'Strain+Treatment')",
-            "output": "Path to the output directory. Default: data"
+            "output_dir": "Path to the output directory. Default: data"
         }
         for key, val in opts.items():
             if key not in kwargs.keys():
@@ -191,7 +191,7 @@ dataset in SLIMS.  [default: dataset_<ISO 8601 timestamp>]',
         cmd = Command(['bin/build_survival_curves.R',
                        '--input_fp', kwargs["input_fp"],
                        '--model', kwargs["model"],
-                       '--output', kwargs["output"]
+                       '--output_dir', kwargs["output_dir"]
                       ]
                      ) 
         print(cmd.stdout.read().decode() + cmd.stderr.read().decode())

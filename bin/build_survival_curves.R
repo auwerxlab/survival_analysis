@@ -29,16 +29,16 @@ opt <- list(
     help = "R formula for the survival::survfit() function"
   ),
   make_option(
-    c("-o", "--output"),
+    c("-o", "--output_dir"),
     type = "character",
     default = here("data"),
     help = "Path to the output directory. Default: data"
   ),
   make_option(
-    c("-f", "--fig"),
+    c("-f", "--fig_dir"),
     type = "character",
     default = NA,
-    help = "Path to the output directory for figure. Default: same as --output"
+    help = "Path to the output directory for figure. Default: same as --output_dir"
   ),
   make_option(
     "--prism",
@@ -93,14 +93,14 @@ opt <- list(
                description = "Fit the Kaplan-Meier survival curves and a Cox proportional hazards model using the R 'survival' package.") %>%
   parse_args
 
-if (is.na(opt$fig)) {
-  opt$fig <- opt$output
+if (is.na(opt$fig_dir)) {
+  opt$fig_dir <- opt$output_dir
 }
 
 # Create output directories if not present yet
-dir.create(opt$output)
-if (opt$output != opt$fig) {
-  dir.create(opt$fig)
+dir.create(opt$output_dir)
+if (opt$output_dir != opt$fig_dir) {
+  dir.create(opt$fig_dir)
 }
 
 # Test input arguments
@@ -227,7 +227,7 @@ survival.data <- input.table %>%
                                       names))
 
 #Export the survival table
-fwrite(survival.data, file.path(opt$output, opt$txt), sep = "\t")
+fwrite(survival.data, file.path(opt$output_dir, opt$txt), sep = "\t")
 
 # Export the survival table for prism
 if (opt$prism == TRUE) {
@@ -238,7 +238,7 @@ if (opt$prism == TRUE) {
     select(one_of("time",
                   survival.data$ExperimentalGroup %>%
                     levels)) %>%
-    fwrite(file.path(opt$output, paste0(opt$txt, "-PRISM.txt")), sep = "\t")
+    fwrite(file.path(opt$output_dir, paste0(opt$txt, "-PRISM.txt")), sep = "\t")
 }
 
 # Fit the Kaplan-Meier survival curves
@@ -250,7 +250,7 @@ fit <-
 coxfit <-
   coxph(as.formula(paste("Surv(time, status) ~", opt$model)),
         data = survival.data)
-sink(file.path(opt$output, opt$coxph))
+sink(file.path(opt$output_dir, opt$coxph))
 summary(coxfit)
 sink()
 
@@ -292,7 +292,7 @@ survival.variables <- fit %>%
       survival:::quantile.survfit(.)
     )
   }
-fwrite(survival.variables, file.path(opt$output, opt$km), sep = "\t")
+fwrite(survival.variables, file.path(opt$output_dir, opt$km), sep = "\t")
 
 # Plot survival curves and associated statistics
 suvival.plot <- {
@@ -432,8 +432,8 @@ suvival.plot <- {
 }
 
 # Store the survival curve object and pdf
-if (opt$figdata == TRUE) {
-  saveRDS(suvival.plot, file.path(opt$fig,
+if (opt$fig_dirdata == TRUE) {
+  saveRDS(suvival.plot, file.path(opt$fig_dir,
                                   paste0(sub(
                                     "\\.[^.]*$",
                                     "",
@@ -441,7 +441,7 @@ if (opt$figdata == TRUE) {
                                   ),
                                   ".rds")))
 }
-pdf(file.path(opt$fig, opt$pdf))
+pdf(file.path(opt$fig_dir, opt$pdf))
 invisible(lapply(suvival.plot, print))
 invisible(dev.off())
 rm(list = ls())
