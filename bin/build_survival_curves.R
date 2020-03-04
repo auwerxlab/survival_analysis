@@ -432,7 +432,7 @@ suvival.plot <- {
 }
 
 # Store the survival curve object and pdf
-if (opt$fig_data == TRUE) {
+if (opt$figdata == TRUE) {
   saveRDS(suvival.plot, file.path(opt$fig_dir,
                                   paste0(sub(
                                     "\\.[^.]*$",
