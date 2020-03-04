@@ -57,12 +57,12 @@ Launch a new Interactive Environment to start working on the project:
 
 This step is done automatically by the Dockerfile |:smiley:|.
 
-When opening the project in RENKU for the first time, migrate the packrat libraries on the docker image using the python ``renku-r-tools`` package.
+When opening the project in RENKU for the first time, change the packrat libraries location from the R project to the docker image using the python ``renku-r-tools`` package.
 This can be done from a Terminal within a running Interactive Environment:
 
 ::
 
-    $ renku-r ln-packrat-lib -p /home/rstudio/survival_analysis -s /home/rstudio/packrat
+    $ renku-r ln-packrat-lib -p . -s /home/rstudio/packrat
 
 5. Save your work !
 -------------------
