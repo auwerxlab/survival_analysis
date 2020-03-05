@@ -166,7 +166,17 @@ input.table <- suppressMessages(
     .
   } %>%
   #ignore data without label or time
-  drop_na(label, Day)
+  drop_na(label, Day) %>%
+  #ignore empty columns
+  select(-one_of(select(.,
+                        one_of(names(.)[summarize_all(.,
+                                                      is.numeric) %>%
+                                          unlist])) %>%
+                   {
+                     names(.)[summarize_all(.,
+                                            function(x){sum(x) == 0}) %>%
+                                unlist]
+                     }))
 
 # Convert the tidy table into a survival table
 survival.data <- input.table %>%
