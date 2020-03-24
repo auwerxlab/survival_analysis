@@ -1,7 +1,5 @@
 FROM auwerxlab/singleuser-r:975a8e0-renku0.8.2-r3.5.2
 
-ARG RENKUTOOLS_VERSION=0.0.1
-
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
 

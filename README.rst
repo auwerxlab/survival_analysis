@@ -5,7 +5,7 @@ Survival analysis
 .. image:: https://img.shields.io/badge/license-apache2-brightgreen.svg
    :target: https://github.com/auwerxlab/survival_analysis/blob/master/LICENSE
 
-.. image:: https://img.shields.io/github/v/release/auwerxlab/survival_analysis
+.. image:: https://img.shields.io/github/v/release/auwerxlab/survival_analysis.svg
    :target: https://github.com/auwerxlab/survival_analysis/releases
 
 .. image:: https://readthedocs.org/projects/survival_analysis/badge/?version=latest

@@ -5,10 +5,20 @@ This section describes the general steps to setup this project in `RENKU <https:
 
 *Tested with RENKU release* `0.5.1 <https://github.com/SwissDataScienceCenter/renku/releases/tag/0.5.1>`_
 
+First, choose the appropriate instance of RENKU for your work:
+
+- Public instance: https://renkulab.io
+- Private instance for EPFL users: https://sv-renku.epfl.ch
+
 1. Import the R project "template" into RENKU
 ---------------------------------------------
 
-Go to RENKU's GitLab then:  |button01| -> |button02| -> |button03|.
+Importing projects can be done using the GitLab web application that is part of the RENKU system.
+
+- GitLab for https://renkulab.io: https://renkulab.io/gitlab
+- GitLab for https://sv-renku.epfl.ch: https://sv-renku-git.epfl.ch
+
+Go to the appropriate RENKU's GitLab then:  |button01| -> |button02| -> |button03|.
 
 .. |button01| image:: images/gitlab_button_01.png
     :width: 90 px
