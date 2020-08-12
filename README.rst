@@ -24,7 +24,7 @@ Features
 - Kaplan-Meier survival curves
 - Cox proportional hazards regression model
 - Compatibility with `RENKU <https://renkulab.io/>`_
-- Integration with `SLIMS <https://www.genohm.com/>`_
+- Integration with `SLIMS <https://www.agilent.com/en/products/software-informatics/openlab-software-suite/lab-workflow-management/slims>`_
 
 Authors
 =======
